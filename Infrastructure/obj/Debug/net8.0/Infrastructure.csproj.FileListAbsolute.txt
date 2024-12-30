@@ -19,3 +19,25 @@ C:\Users\HP\source\repos\Technical Assessment Overview\Infrastructure\bin\Debug\
 C:\Users\HP\source\repos\Technical Assessment Overview\Infrastructure\bin\Debug\net8.0\ProjectDbContext.pdb
 C:\Users\HP\source\repos\Technical Assessment Overview\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
 C:\Users\HP\source\repos\Technical Assessment Overview\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\Application.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\DTOs.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\Models.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\ProjectDbContext.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\Application.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\Models.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\DTOs.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\bin\Debug\net8.0\ProjectDbContext.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll

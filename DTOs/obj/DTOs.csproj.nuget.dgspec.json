@@ -1,17 +1,92 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\DTOs\\DTOs.csproj": {}
+    "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DTOs\\DTOs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\DTOs\\DTOs.csproj": {
+    "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DTOs\\DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\DTOs\\DTOs.csproj",
+        "projectUniqueName": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DTOs\\DTOs.csproj",
         "projectName": "DTOs",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\DTOs\\DTOs.csproj",
+        "projectPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DTOs\\DTOs.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\DTOs\\obj\\",
+        "outputPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DTOs\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj": {
+                "projectPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,12 +124,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Http.Features": {
-              "target": "Package",
-              "version": "[5.0.17, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

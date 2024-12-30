@@ -599,8 +599,8 @@
     },
     "Models/1.0.0": {
       "type": "project",
-      "path": "../Technical Assessment Overview/Models.csproj",
-      "msbuildProject": "../Technical Assessment Overview/Models.csproj"
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -616,11 +616,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\DbContext\\ProjectDbContext.csproj",
+      "projectUniqueName": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DbContext\\ProjectDbContext.csproj",
       "projectName": "ProjectDbContext",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\DbContext\\ProjectDbContext.csproj",
+      "projectPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DbContext\\ProjectDbContext.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\DbContext\\obj\\",
+      "outputPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DbContext\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -642,8 +642,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\Technical Assessment Overview\\Models.csproj": {
-              "projectPath": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\Technical Assessment Overview\\Models.csproj"
+            "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj": {
+              "projectPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj"
             }
           }
         }

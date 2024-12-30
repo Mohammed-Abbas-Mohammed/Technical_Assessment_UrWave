@@ -13,3 +13,19 @@ C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.
 C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\refint\ProjectDbContext.dll
 C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectDbContext.pdb
 C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ref\ProjectDbContext.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectDbContext.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\refint\ProjectDbContext.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectDbContext.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectDbContext.csproj.AssemblyReference.cache
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectDbContext.GeneratedMSBuildEditorConfig.editorconfig
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectDbContext.AssemblyInfoInputs.cache
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectDbContext.AssemblyInfo.cs
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectDbContext.csproj.CoreCompileInputs.cache
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectDbContext.sourcelink.json
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\bin\Debug\net8.0\ProjectDbContext.deps.json
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\bin\Debug\net8.0\ProjectDbContext.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\bin\Debug\net8.0\ProjectDbContext.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\bin\Debug\net8.0\Models.dll
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\bin\Debug\net8.0\Models.pdb
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ProjectD.0B3A344E.Up2Date
+F:\الصالة الرياضية\books\DevOps\Technical Assessment Overview\Technical_Assessment_UrWave\DbContext\obj\Debug\net8.0\ref\ProjectDbContext.dll

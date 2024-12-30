@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\Technical Assessment Overview\\Models.csproj": {}
+    "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\Technical Assessment Overview\\Models.csproj": {
+    "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\Technical Assessment Overview\\Models.csproj",
+        "projectUniqueName": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\Technical Assessment Overview\\Models.csproj",
+        "projectPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\Technical Assessment Overview\\Technical Assessment Overview\\obj\\",
+        "outputPath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
