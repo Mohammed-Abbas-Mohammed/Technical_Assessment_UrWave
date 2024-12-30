@@ -1,0 +1,15 @@
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\bin\Debug\net8.0\ProjectDbContext.deps.json
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\bin\Debug\net8.0\ProjectDbContext.dll
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\bin\Debug\net8.0\ProjectDbContext.pdb
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\bin\Debug\net8.0\Models.dll
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\bin\Debug\net8.0\Models.pdb
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectDbContext.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectDbContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectDbContext.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectDbContext.AssemblyInfo.cs
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectDbContext.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectD.0B3A344E.Up2Date
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectDbContext.dll
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\refint\ProjectDbContext.dll
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ProjectDbContext.pdb
+C:\Users\HP\source\repos\Technical Assessment Overview\DbContext\obj\Debug\net8.0\ref\ProjectDbContext.dll
