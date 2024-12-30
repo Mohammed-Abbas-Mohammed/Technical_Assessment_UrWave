@@ -1,0 +1,6 @@
+@ProductCategoryManagementSystem_HostAddress = http://localhost:5124
+
+GET {{ProductCategoryManagementSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

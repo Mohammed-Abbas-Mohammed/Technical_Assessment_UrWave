@@ -9,13 +9,16 @@ namespace Technical_Assessment_Overview.Shared
 {
     public class BaseEntity
     {
-        public int Id { get; set; }
-        [MaxLength(100)]
-        public string CreatedBy { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-        [MaxLength(100)]
-        public string UpdatedBy { get; set; }
         public DateTime UpdatedDate { get; set; } = DateTime.Now;
-        public bool IsDeleted { get; set; }
+        public EntityStatus Status { get; set; } = EntityStatus.Active;
+    }
+
+    public enum EntityStatus
+    {
+        Active,
+        Inactive,
+        Discontinued
     }
 }

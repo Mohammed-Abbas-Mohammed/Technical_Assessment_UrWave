@@ -9,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Technical_Assessment_Overview.Product;
+using Technical_Assessment_Overview.Shared;
 
 namespace Infrastructure.ProductInfrastructre
 {
-    public class ProductRepository : GenericRepositoryWithLogging<ProductP>, IProductRepository
+    public class ProductRepository : GenericRepository<ProductP>, IProductRepository
     {
         protected readonly MSysDbContext context;
 
@@ -22,28 +23,31 @@ namespace Infrastructure.ProductInfrastructre
         }
 
 
-        public async Task<IQueryable<ProductP>> SearchByNameAsync(string name)
+        public async Task<IEnumerable<ProductP>> SearchByNameAsync(string name)
         {
-            var products = await GetAllAsync();
+            var products = await context.products
+                                 .Where(t => t.Name.ToLower().Contains(name.ToLower()))
+                                 .Select(t => new ProductP
+                                 {
+                                     Id = t.Id,
+                                     Name = t.Name,
+                                     Description = t.Description,
+                                     Price = t.Price,
+                                     StockQuantity = t.StockQuantity,
+                                     ImageUrl = t.ImageUrl,
+                                     CategoryId = t.CategoryId,
+                                     Status = t.Status,
+                                     CreatedDate = t.CreatedDate,
+                                     UpdatedDate = t.UpdatedDate
+                                 })
+                                 .ToListAsync();  // Materialize the query
             return products;
-            //return products.Where(p => p.Translations.Any(t => t.Name.ToLower().Contains(name.ToLower()) ||
-            //     p.Translations.Any(t => t.BrandName.ToLower().Contains(name.ToLower())))).Include(p => p.Translations).Include(p => p.Images);
+
         }
 
-        public override async Task<ProductP> GetByIdAsync(int id)
+        public async Task<IQueryable<ProductP>> GetFilteredProductsAsync()
         {
-            return await context.products.FirstOrDefaultAsync(p => p.Id == id);
-        }
-
-        public override async Task<IQueryable<ProductP>> GetAllAsync()
-        {
-            var products = context.products.Where(p => !p.IsDeleted);
-            return products;
-        }
-
-        public async Task<IQueryable<ProductP>> GetFilteredProductsAsync(int languageId)
-        {
-            var products = context.products.Where(p => !p.IsDeleted);
+            var products = context.products.Where(p => p.Status != EntityStatus.Discontinued);
             return products;
         }
         public async Task<EntityPaginated<ProductP>> GetAllPaginatedAsync(int pageNumber, int count)

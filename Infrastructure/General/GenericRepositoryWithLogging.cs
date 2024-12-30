@@ -22,9 +22,9 @@ namespace Infrastructure.General
             dbSet = _context.Set<T>();
         }
 
-        public virtual async Task<IQueryable<T>> GetAllAsync() => await Task.FromResult(dbSet.Select(p => p).Where(p => !p.IsDeleted));
+        public virtual async Task<IQueryable<T>> GetAllAsync() => await Task.FromResult(dbSet.Select(p => p));
 
-        public virtual async Task<T> GetByIdAsync(int id) => await dbSet.FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
+        public virtual async Task<T> GetByIdAsync(Guid id) => await dbSet.FirstOrDefaultAsync(p => p.Id == id );
 
         public async Task<T> AddAsync(T entity)
         {
@@ -39,12 +39,11 @@ namespace Infrastructure.General
             await context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Guid id)
         {
             var entity = await GetByIdAsync(id);
             if (entity != null)
             {
-                entity.IsDeleted = true; ;
                 await UpdateAsync(entity);
             }
         }

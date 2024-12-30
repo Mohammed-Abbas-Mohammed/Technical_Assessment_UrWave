@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "KT+RGBxBXp8=",
+  "dgSpecHash": "2XxAFZviODM=",
   "success": true,
-  "projectFilePath": "F:\\الصالة الرياضية\\books\\DevOps\\Technical Assessment Overview\\Technical_Assessment_UrWave\\DTOs\\DTOs.csproj",
+  "projectFilePath": "D:\\Projects\\UrWave Assessment\\Technical_Assessment_UrWave\\DTOs\\DTOs.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+    "C:\\Users\\Mohammed Abbas\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Mohammed Abbas\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Mohammed Abbas\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

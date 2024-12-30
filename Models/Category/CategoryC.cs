@@ -11,13 +11,17 @@ namespace Technical_Assessment_Overview.Category
 {
     public class CategoryC : BaseEntity
     {
-        [Required, MaxLength(100, ErrorMessage = "Name is required less than 100 chars")]
+        [Required, MaxLength(50, ErrorMessage = "Name is required less than 50 chars")]
         public string Name { get; set; }
 
-        [Required, MaxLength(500, ErrorMessage = "Description is required less than 500 chars")]
-        public string Description { get; set; }
+        [MaxLength(200, ErrorMessage = "Description is required less than 200 chars")]
+        public string? Description { get; set; }
 
         [Required, ForeignKey("Category")]
-        public int? ParentCategoryId { get; set; }
+        public Guid? ParentCategoryId { get; set; }
+        public CategoryC? ParentCategory { get; set; } 
+        public ICollection<CategoryC>? SubCategories { get; set; }
+
+
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.General
 {
-    internal class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly MSysDbContext context;
         private readonly DbSet<T> dbSet;
@@ -22,7 +22,7 @@ namespace Infrastructure.General
 
         public virtual async Task<IQueryable<T>> GetAllAsync() => await Task.FromResult(dbSet.Select(p => p));
 
-        public virtual async Task<T> GetByIdAsync(int id) => await dbSet.FindAsync(id);
+        public virtual async Task<T> GetByIdAsync(Guid id) => await dbSet.FindAsync(id);
 
         public async Task<T> AddAsync(T entity)
         {
@@ -37,7 +37,7 @@ namespace Infrastructure.General
             await context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Guid id)
         {
             var entity = await GetByIdAsync(id);
             if (entity != null)

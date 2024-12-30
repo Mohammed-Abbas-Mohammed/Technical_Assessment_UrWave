@@ -5,21 +5,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Technical_Assessment_Overview.Shared;
 
 namespace DTOs.CategoryDTOs
 {
     public class CategoryDTO
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
       
         public string Name { get; set; }
         public string Description { get; set; }
-        public int? ParentCategoryId { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public Guid? ParentCategoryId { get; set; }
+        public EntityStatus Status { get; set; }
 
-        public string UpdatedBy { get; set; }
-        public DateTime UpdatedDate { get; set; } = DateTime.Now;
-        public bool IsDeleted { get; set; }
     }
 }

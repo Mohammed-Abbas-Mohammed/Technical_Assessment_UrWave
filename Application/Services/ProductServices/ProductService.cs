@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Technical_Assessment_Overview.Product;
+using Technical_Assessment_Overview.Shared;
 
 namespace Application.Services.ProductServices
 {
@@ -25,20 +26,12 @@ namespace Application.Services.ProductServices
 
         public async Task<ResultView<ProductDTO>> CreateProductAsync(ProductDTO productDto)
         {
-            if (productDto.Id > 0)
-                return ResultView<ProductDTO>.Failure("Product already exists. Use update to modify it.");
 
-            if (productDto.Price < 0)
-                return ResultView<ProductDTO>.Failure("Product price must be a positive value.");
-
-            if (productDto.StockQuantity < 0)
-                return ResultView<ProductDTO>.Failure("Product Quantity must be a positive value.");
-
+            if (productDto.Price < 0 || productDto.StockQuantity < 0)
+                return ResultView<ProductDTO>.Failure("Positive Value required.");
 
             var product = mapper.Map<ProductP>(productDto);
             var createdProduct = await productRepository.AddAsync(product);
-
-
 
             return ResultView<ProductDTO>.Success(mapper.Map<ProductDTO>(createdProduct));
         }
@@ -49,38 +42,32 @@ namespace Application.Services.ProductServices
                 return ResultView<ProductDTO>.Failure("Product must have data to be added");
 
             var existingProduct = await productRepository.GetByIdAsync(productDto.Id);
-            if (existingProduct == null || existingProduct.IsDeleted)
+
+            if (existingProduct == null)
                 return ResultView<ProductDTO>.Failure("Product not found. Unable to update.");
 
-            if (productDto.Price < 0)
-                return ResultView<ProductDTO>.Failure("Product price must be a positive value.");
-
-            if (productDto.StockQuantity < 0)
-                return ResultView<ProductDTO>.Failure("Product Quantity must be a positive value.");
+            if (productDto.Price < 0 || productDto.StockQuantity < 0)
+                return ResultView<ProductDTO>.Failure("Positive Value required.");
 
             mapper.Map(productDto, existingProduct);
-
-            //existingProduct.UpdatedBy = _userService.GetCurrentUserId();
 
             await productRepository.UpdateAsync(existingProduct);
             return ResultView<ProductDTO>.Success(productDto);
         }
 
-        public async Task<ResultView<ProductDTO>> DeleteProductAsync(int id)
+        public async Task<ResultView<ProductDTO>> DeleteProductAsync(Guid id)
         {
             var existingProduct = await productRepository.GetByIdAsync(id);
             if (existingProduct == null)
                 return ResultView<ProductDTO>.Failure("Product not found. Unable to delete.");
 
-            existingProduct.IsDeleted = true;
-            //_userService.GetCurrentUserId();
-            //existingProduct.Updated = DateTime.Now;
+            existingProduct.Status = EntityStatus.Discontinued;
 
             await productRepository.UpdateAsync(existingProduct);
             return ResultView<ProductDTO>.Success(null);
         }
 
-        public async Task<ResultView<ProductDTO>> GetProductByIdAsync(int id)
+        public async Task<ResultView<ProductDTO>> GetProductByIdAsync(Guid id)
         {
 
             var product = await productRepository.GetByIdAsync(id);
@@ -94,16 +81,9 @@ namespace Application.Services.ProductServices
 
         public async Task<ResultView<IEnumerable<ProductDTO>>> GetAllProductsAsync()
         {
-            //var languageId = _languageService.GetCurrentLanguageCode();
-
             var products = await productRepository.GetAllAsync();
-
-            //var filteredProducts = await productRepository.GetFilteredProductsAsync(languageId);
-
-            //var filteredProducts =  products.Where(p => p.Translations.Any(t => t.Language.Id == languageId));
             var productDtos = mapper.Map<IEnumerable<ProductDTO>>(products);
             return ResultView<IEnumerable<ProductDTO>>.Success(productDtos);
-
         }
 
         public async Task<ResultView<IEnumerable<ProductDTO>>> SearchProductsByNameAsync(string name)
@@ -119,11 +99,7 @@ namespace Application.Services.ProductServices
 
         public async Task<EntityPaginated<ProductDTO>> GetAllPaginatedAsync(int pageNumber, int Count)
         {
-            //var languageId = _languageService.GetCurrentLanguageCode(); // Get current language
             var products = await productRepository.GetAllAsync();
-            //var productsQuery = products.Where(p => p.Translations.Any(t => t.LanguageId == languageId)).AsQueryable();
-            //var productsQuery = await _productRepository.GetAllAsync(); 
-
             var totalCount = products.Count();
 
             var Resultproducts = products
@@ -134,14 +110,10 @@ namespace Application.Services.ProductServices
                     Id = p.Id,
                     Price = p.Price,
                     StockQuantity = p.StockQuantity,
-                    CreatedBy = p.CreatedBy,
-                    CreatedDate = p.CreatedDate,
-                    UpdatedBy = p.UpdatedBy,
-                    UpdatedDate = p.UpdatedDate,
-                    IsDeleted = p.IsDeleted
-                }
-                    //Images = p.Images.Select(img => new ProductImageDto
-                    ).ToList();
+                    ImageUrl = p.ImageUrl,
+                    Description = p.Description,
+                    Name = p.Name,
+                }).ToList();
 
             return new EntityPaginated<ProductDTO>
             {

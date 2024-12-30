@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Technical_Assessment_Overview.Shared;
+using Technical_Assessment_Overview.Category;
 
 namespace Technical_Assessment_Overview.Product
 {
@@ -24,9 +25,10 @@ namespace Technical_Assessment_Overview.Product
         public int StockQuantity { get; set; }
 
         [MaxLength(250)]
-        public string? Url { get; set; }
+        public string? ImageUrl { get; set; }
 
         [Required, ForeignKey("Category")]
-        public int CategoryId { get; set; }
+        public Guid CategoryId { get; set; }
+        public CategoryC Category { get; set; }
     }
 }

@@ -8,7 +8,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Technical_Assessment_Overview.Category;
+using Technical_Assessment_Overview.Product;
 
 namespace Infrastructure.CategoryInfrastructure
 {
@@ -22,18 +24,28 @@ namespace Infrastructure.CategoryInfrastructure
 
         public async Task<IEnumerable<CategoryC>> GetByNameAsync(string categoryName)
         {
-            return await dbContext.Categories
-                                 //.Include(c => c.Translations)
-                                 //.Where(c => (t => t.Name.ToLower().Equals(categoryName.ToLower())))
-                                 .ToListAsync();
+            var categories = await dbContext.Categories
+                .Where(t => t.Name.ToLower().Contains(categoryName.ToLower()))
+                .Select(t => new CategoryC
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    Description = t.Description,
+                    Status = t.Status,
+                    CreatedDate = t.CreatedDate,
+                    UpdatedDate = t.UpdatedDate
+                })
+                .ToListAsync();  
+
+            return categories;
         }
-       
+
         public async Task AddAsync(CategoryC category)
         {
             await dbContext.Categories.AddAsync(category);
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Guid id)
         {
             var category = await GetByIdAsync(id);
             if (category != null)
@@ -42,37 +54,14 @@ namespace Infrastructure.CategoryInfrastructure
             }
         }
 
-        public async Task<IEnumerable<CategoryC>> GetAllAsync()
-        {
+        public async Task<IEnumerable<CategoryC>> GetAllAsync()=> await dbContext.Categories.ToListAsync();
 
-            return await dbContext.Categories
-                                    // .Include(c => c.Translations)
-                                    //.ThenInclude(t => t.Language)
-                                    // .Include(c => c.ProductCategories)
-            .Where(c => !c.IsDeleted).ToListAsync();
-        }
+        public async Task<CategoryC> GetByIdAsync(Guid id)=> await dbContext.Categories.FirstOrDefaultAsync(c => c.Id == id);
+ 
+        public async Task SaveChangesAsync() => await dbContext.SaveChangesAsync();
 
-        public async Task<CategoryC> GetByIdAsync(int id)
-        {
-            return await dbContext.Categories
-                                 //.Include(c => c.Translations)
-                                 //.Include(c => c.ProductCategories)
-                                 .FirstOrDefaultAsync(c => c.Id == id);
-        }
-
-        public async Task SaveChangesAsync()
-        {
-            await dbContext.SaveChangesAsync();
-        }
-
-        public async Task UpdateAsync(CategoryC category)
-        {
-
-            //_dbContext.Attach(category);
-            //_dbContext.Entry(category).State = EntityState.Modified;
-            dbContext.Categories.Update(category);
-            //await _dbContext.SaveChangesAsync();
-        }
+        public async Task UpdateAsync(CategoryC category) => dbContext.Categories.Update(category);
+   
 
         public async Task<bool> AnyAsync(Expression<Func<CategoryC, bool>> predicate)
         {
