@@ -18,11 +18,11 @@ namespace Technical_Assessment_Overview.Category
         [MaxLength(200, ErrorMessage = "Description is required less than 200 chars")]
         public string? Description { get; set; }
 
-        [Required, ForeignKey("Category")]
+        [ForeignKey("Category")]
         public Guid? ParentCategoryId { get; set; }
         public CategoryC? ParentCategory { get; set; }
         public ICollection<ProductP>? Products { get; set; }
-        //public ICollection<CategoryC>? SubCategories { get; set; }
+        public ICollection<CategoryC>? SubCategories { get; set; }
 
 
     }

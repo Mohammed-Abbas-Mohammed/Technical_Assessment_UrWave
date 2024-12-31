@@ -1,8 +1,10 @@
 
 using Application.Contracts.Category;
 using Application.Contracts.Product;
+using Application.Mapper;
 using Application.Services.CategoryServices;
 using Application.Services.ProductServices;
+using AutoMapper;
 using DTOs.CategoryDTOs;
 using DTOs.ProductDTOs;
 using Infrastructure.CategoryInfrastructure;
@@ -20,6 +22,10 @@ namespace ProductCategoryManagementSys
 
             builder.Services.AddDbContext<MSysDbContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
+            var serviceProvider = builder.Services.BuildServiceProvider();
+            var mapper = serviceProvider.GetService<IMapper>();
 
             // Add services to the container.
             builder.Services.AddAuthorization();
@@ -63,7 +69,7 @@ namespace ProductCategoryManagementSys
                 return Results.Ok(product);
             });
 
-            app.MapPost("/products", async (ProductDTO productDto, IProductService productService) =>
+            app.MapPost("/products", async (ProductDTO productDto, IProductService productService, IMapper mapper) =>
             {
                 var product = await productService.CreateProductAsync(productDto);
                 return Results.Created($"/products/{product.Entity.Id}", product);

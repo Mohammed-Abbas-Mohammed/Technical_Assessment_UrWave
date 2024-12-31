@@ -11,7 +11,7 @@ using Technical_Assessment_Overview.Product;
 
 namespace Application.Mapper
 {
-    internal class MappingProfile: Profile
+    public class MappingProfile: Profile
     {
         public MappingProfile()
         {
