@@ -1,0 +1,38 @@
+<div class="flex">
+    <!-- Sidebar for Filters -->
+    <div class="w-1/4 p-4">
+      <h3>Filters</h3>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li *ngFor="let category of categories" (click)="filterByCategory(category.id)">
+            {{ category.name }}
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>Price Range</h4>
+        <input type="range" min="0" max="1000" step="10" [(ngModel)]="priceRange" />
+        <p>Selected: {{ priceRange }}</p>
+      </div>
+      <div>
+        <h4>Status</h4>
+        <select [(ngModel)]="selectedStatus" (change)="filterByStatus()">
+          <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+        </select>
+      </div>
+    </div>
+  
+    <!-- Main Content for Products -->
+    <div class="w-3/4 p-4">
+      <h3>Products</h3>
+      <div class="grid grid-cols-3 gap-4">
+        <div *ngFor="let product of filteredProducts" class="border p-2">
+          <h4>{{ product.name }}</h4>
+          <p>{{ product.description }}</p>
+          <p>Price: {{ product.price | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

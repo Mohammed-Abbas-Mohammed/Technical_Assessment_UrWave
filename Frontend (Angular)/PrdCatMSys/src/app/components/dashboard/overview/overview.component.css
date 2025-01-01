@@ -1,0 +1,11 @@
+/* Custom Table Styles */
+:host ::ng-deep .p-table {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  :host ::ng-deep .p-datatable-header {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  

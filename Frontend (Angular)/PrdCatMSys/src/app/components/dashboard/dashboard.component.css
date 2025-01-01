@@ -1,41 +1,19 @@
-/* Ensure the sidebar doesn't overlap the header */
 .dashboard-container {
   display: flex;
-  min-height: 100vh;
+  height: 100%; 
 }
 
 .sidebar {
   position: fixed;
-  top: 0; /* Start below the header */
-  left: 0;
-  height: calc(100vh - 80px); /* Full viewport height minus header height */
-  left: 0;
-  height: 100%;
-  width: 250px;
-  background-color: #2d2d2d; /* Dark background for the sidebar */
-  color: white;
-  padding-top: 20px;
-  z-index: 99; /* Ensure it's below the header */
+  top: 5rem; 
+  bottom: 5rem; 
+  width: 16rem; 
+  background-color: #1a202c;
+  overflow-y: auto;
 }
 
 .main-content {
-  margin-left: 250px; /* Space for the sidebar */
-  padding: 20px;
-  flex-grow: 1;
-  background-color: #f4f4f4;
-}
-
-/* Sidebar links styling */
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  background-color: #444;
-}
-
-/* Active link color */
-.text-gray-300 {
-  color: #d1d5db;
+  margin-left: 16rem; 
+  padding: 1rem;
+  overflow-y: auto; 
 }

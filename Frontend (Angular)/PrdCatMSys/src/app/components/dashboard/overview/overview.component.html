@@ -1,0 +1,94 @@
+<main class="flex-1 p-6">
+    <h2 class="text-2xl font-bold mb-4">Dashboard Overview</h2>
+    <!-- Add dashboard summary and metrics here -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Example Card: Total Products -->
+      <div class="bg-white p-4 rounded shadow-md">
+        <h3 class="text-lg font-semibold">Total Products</h3>
+        <p class="text-2xl">100</p>
+      </div>
+      <!-- Example Card: Categories Count -->
+      <div class="bg-white p-4 rounded shadow-md">
+        <h3 class="text-lg font-semibold">Total Categories</h3>
+        <p class="text-2xl">10</p>
+      </div>
+      <!-- Example Card: Low Stock Alerts -->
+      <div class="bg-white p-4 rounded shadow-md">
+        <h3 class="text-lg font-semibold">Low Stock Alerts</h3>
+        <p class="text-2xl">5</p>
+      </div>
+    </div>
+
+<!--  
+    <p-table
+  #dt
+  [value]="products"
+  [paginator]="true"
+  [rows]="10"
+  [rowsPerPageOptions]="[5, 10, 20]"
+  [globalFilterFields]="['name', 'category']"
+  responsiveLayout="scroll"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th>
+      <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+      <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <th></th> -->
+      <!-- <th>
+        <input
+          pInputText
+          type="text"
+          (input)="dt.filter($event.target?.value, 'name', 'contains')"
+          placeholder="Search by name"
+        />
+      </th>
+      <th>
+        <input
+          pInputText
+          type="text"
+          (input)="dt.filter($event.target?.value, 'category', 'contains')"
+          placeholder="Search by category"
+        />
+      </th> -->
+      <!-- <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>
+        <p-tableCheckbox [value]="product"></p-tableCheckbox>
+      </td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td>{{ product.stock }}</td>
+      <td>
+        <button pButton type="button" label="Edit" class="p-button-text"></button>
+        <button
+          pButton
+          type="button"
+          label="Delete"
+          class="p-button-danger p-button-text"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <tr>
+      <td colspan="6">Showing {{ products.length }} products</td>
+    </tr>
+  </ng-template>
+</p-table>  -->
+  </main>
