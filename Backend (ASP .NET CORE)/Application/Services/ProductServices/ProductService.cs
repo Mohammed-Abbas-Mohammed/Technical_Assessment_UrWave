@@ -122,5 +122,19 @@ namespace Application.Services.ProductServices
             };
 
         }
+
+        public async Task DeleteProductsBatchAsync(Guid[] ids)
+        {
+            var products = await productRepository.GetAllAsync();
+
+            var productsToDelete = products.Where(p => ids.Contains(p.Id)).ToList();
+
+            if (!productsToDelete.Any())
+            {
+                throw new KeyNotFoundException("No products found with the provided IDs.");
+            }
+
+            await productRepository.DeleteRangeAsync(productsToDelete);
+        }
     }
 }

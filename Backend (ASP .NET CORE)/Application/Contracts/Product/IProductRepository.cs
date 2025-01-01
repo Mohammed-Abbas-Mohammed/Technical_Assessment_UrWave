@@ -11,6 +11,7 @@ namespace Application.Contracts.Product
 {
     public interface IProductRepository: IGenericRepository<ProductP>
     {
+        Task DeleteRangeAsync(IEnumerable<ProductP> entities);
         public Task<IEnumerable<ProductP>> SearchByNameAsync(string name);
         public Task<EntityPaginated<ProductP>> GetAllPaginatedAsync(int pageNumber, int count);
         public Task<IQueryable<ProductP>> GetFilteredProductsAsync();

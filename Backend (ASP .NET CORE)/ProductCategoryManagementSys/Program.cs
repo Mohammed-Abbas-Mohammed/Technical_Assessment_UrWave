@@ -11,6 +11,7 @@ using Infrastructure.CategoryInfrastructure;
 using Infrastructure.ProductInfrastructre;
 using Microsoft.EntityFrameworkCore;
 using ProjectDbContext;
+using System;
 
 namespace ProductCategoryManagementSys
 {
@@ -36,7 +37,7 @@ namespace ProductCategoryManagementSys
 
             // Register services for dependency injection
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
 
@@ -59,8 +60,17 @@ namespace ProductCategoryManagementSys
 
             app.MapGet("/products", async (IProductService productService) =>
             {
-                var products = await productService.GetAllProductsAsync();
-                return Results.Ok(products);
+                try
+                {
+                    var products = await productService.GetAllProductsAsync();
+                    return Results.Ok(products);
+                }
+                catch
+
+                    (Exception ex)
+                {
+                    return Results.BadRequest(ex.Message);
+                }
             });
 
             app.MapGet("/products/{id}", async (Guid id, IProductService productService) =>
@@ -69,7 +79,7 @@ namespace ProductCategoryManagementSys
                 return Results.Ok(product);
             });
 
-            app.MapPost("/products", async (ProductDTO productDto, IProductService productService, IMapper mapper) =>
+            app.MapPost("/products", async (ProductDTO productDto, IProductService productService) =>
             {
                 var product = await productService.CreateProductAsync(productDto);
                 return Results.Created($"/products/{product.Entity.Id}", product);
@@ -86,6 +96,20 @@ namespace ProductCategoryManagementSys
                 await productService.DeleteProductAsync(id);
                 return Results.NoContent();
             });
+
+            app.MapDelete("/products/batch", async (Guid[] ids, IProductService productService) =>
+            {
+                try
+                {
+                    await productService.DeleteProductsBatchAsync(ids);
+                    return Results.Ok($"Successfully deleted {ids.Length} product(s).");
+                }
+                catch (Exception ex)
+                {
+                    return Results.BadRequest(ex.Message);
+                }
+            });
+
 
 
             //Category

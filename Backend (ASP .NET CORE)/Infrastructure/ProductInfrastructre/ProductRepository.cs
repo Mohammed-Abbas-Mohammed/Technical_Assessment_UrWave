@@ -21,7 +21,10 @@ namespace Infrastructure.ProductInfrastructre
         {
             context = _context;
         }
-
+        public async Task DeleteRangeAsync(IEnumerable<ProductP> entities)
+        {
+            context.products.RemoveRange(entities);
+        }
 
         public async Task<IEnumerable<ProductP>> SearchByNameAsync(string name)
         {
@@ -40,7 +43,7 @@ namespace Infrastructure.ProductInfrastructre
                                      CreatedDate = t.CreatedDate,
                                      UpdatedDate = t.UpdatedDate
                                  })
-                                 .ToListAsync();  // Materialize the query
+                                 .ToListAsync(); 
             return products;
 
         }

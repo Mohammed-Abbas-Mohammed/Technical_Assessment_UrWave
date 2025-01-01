@@ -29,4 +29,9 @@ export class ProductService {
   deleteProduct(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  deleteSelectedProducts(ids: number[]): Observable<any> {
+    return this.http.delete<any>('/products/batch', { body: ids });
+  }
+  
 }

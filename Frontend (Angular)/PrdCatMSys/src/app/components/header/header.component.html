@@ -1,0 +1,16 @@
+<header class="bg-blue-600 text-white p-6">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">UrWave System</h1>
+    <button class="lg:hidden p-3" (click)="toggleMenu()">☰</button>
+    
+    <!-- Navbar (horizontal on large screens) -->
+    <nav [ngClass]="{ 'hidden': !menuVisible }" class="lg:flex space-x-6">
+      <ul class="flex lg:flex-row flex-col space-x-6 lg:space-y-0">
+        <li><a href="/" class="hover:text-gray-300 text-lg">Home</a></li>
+        <li><a href="/products" class="hover:text-gray-300 text-lg">Products</a></li>
+        <li><a href="/categories" class="hover:text-gray-300 text-lg">Categories</a></li>
+        <li><a href="/dashboard" class="hover:text-gray-300 text-lg">Dashboard</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -30,5 +30,10 @@ export class CategoryService {
   deleteCategory(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  deleteSelectedCategories(ids: number[]): Observable<any> {
+    return this.http.delete<any>('/categories/batch', { body: ids });
+  }
+  
 }
 

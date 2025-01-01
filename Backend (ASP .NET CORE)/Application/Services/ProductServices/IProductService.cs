@@ -17,5 +17,6 @@ namespace Application.Services.ProductServices
         Task<ResultView<IEnumerable<ProductDTO>>> GetAllProductsAsync();
         Task<ResultView<IEnumerable<ProductDTO>>> SearchProductsByNameAsync(string name);
         public Task<EntityPaginated<ProductDTO>> GetAllPaginatedAsync(int pageNumber, int Count);
+        public Task DeleteProductsBatchAsync(Guid[] ids);
     }
 }

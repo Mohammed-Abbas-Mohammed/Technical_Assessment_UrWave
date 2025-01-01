@@ -1,20 +1,11 @@
-<h1>Categories</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let category of categories">
-      <td>{{ category.name }}</td>
-      <td>{{ category.description }}</td>
-      <td>
-        <button (click)="editCategory(category.id)">Edit</button>
-        <button (click)="deleteCategory(category.id)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<!-- categories.component.html -->
+<div>
+  <h2 class="text-2xl font-bold mb-4">Manage Categories</h2>
+  <!-- Add a table or any other data here to manage categories -->
+  <ul>
+    <li class="p-4 border-b">Category 1</li>
+    <li class="p-4 border-b">Category 2</li>
+    <li class="p-4 border-b">Category 3</li>
+    <!-- Add more categories as needed -->
+  </ul>
+</div>
