@@ -2,11 +2,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './components/category/category.component';
-import { ProductComponent } from './components/product/product.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { ProductComponent } from './components/product/product.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'categories', component: CategoryComponent },
   { path: 'products', component: ProductComponent },
   {path: 'dashboard',  component: DashboardComponent, 
@@ -16,7 +18,7 @@ export const routes: Routes = [
       { path: 'categories', component: CategoryComponent }, // Manage Categories
     ]
   },
-  { path: '', redirectTo: '/products', pathMatch: 'full' } // Default route
+  { path: '', redirectTo: '/home', pathMatch: 'full' } // Default route
 ];
 
 @NgModule({

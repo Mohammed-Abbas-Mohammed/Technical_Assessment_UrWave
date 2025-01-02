@@ -1,19 +1,18 @@
-<!-- dashboard.component.html -->
+<div class="dashboard-container flex flex-col h-full">
+  <div class="flex flex-grow">
+    <!-- Sidebar -->
+    <div class="sidebar bg-gray-800 text-white w-64 fixed top-16 bottom-16">
+      <h2 class="text-xl font-bold p-4">Dashboard</h2>
+      <ul class="space-y-4">
+        <li><a routerLink="overview" routerLinkActive="text-gray-300" class="block px-4 py-2 hover:bg-gray-700">Overview</a></li>
+        <li><a routerLink="products" routerLinkActive="text-gray-300" class="block px-4 py-2 hover:bg-gray-700">Manage Products</a></li>
+        <li><a routerLink="categories" routerLinkActive="text-gray-300" class="block px-4 py-2 hover:bg-gray-700">Manage Categories</a></li>
+      </ul>
+    </div>
 
-<div class="dashboard-container">
-<!-- sidebar will be hidden on small screens and visible on larger ones -->
-<div class="sidebar bg-gray-800 text-white w-64 fixed h-full sm:block md:block">
-  <div class="sidebar bg-gray-800 text-white w-64 fixed h-full">
-    <h2 class="text-xl font-bold p-4">Dashboard</h2>
-    <ul class="space-y-4">
-      <li><a routerLink="overview" routerLinkActive="text-gray-300" class="block px-4 py-2 hover:bg-gray-700">Overview</a></li>
-      <li><a routerLink="products" routerLinkActive="text-gray-300" class="block px-4 py-2 hover:bg-gray-700">Manage Products</a></li>
-      <li><a routerLink="categories" routerLinkActive="text-gray-300" class="block px-4 py-2 hover:bg-gray-700">Manage Categories</a></li>
-    </ul>
-  </div>
-</div>
-
-  <div class="main-content ml-64 p-6">
-    <router-outlet></router-outlet> 
+    <!-- Main Content -->
+    <div class="main-content flex-grow ml-64 p-6 overflow-y-auto">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

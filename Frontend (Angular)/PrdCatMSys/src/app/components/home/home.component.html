@@ -1,0 +1,58 @@
+<div class="flex space-x-4">
+    <!-- Sidebar for Filters -->
+    <div class="w-1/4 bg-gray-100 p-6 rounded-md shadow-md">
+      <h3 class="text-xl font-semibold mb-4">Filters</h3>
+      
+      <!-- Categories Filter -->
+      <div class="mb-6">
+        <h4 class="text-lg font-medium mb-2">Categories</h4>
+        <ul class="space-y-2">
+          <li 
+            *ngFor="let category of categories" 
+            (click)="filterByCategory(category.id)" 
+            class="cursor-pointer hover:bg-gray-200 p-2 rounded-md transition-colors">
+            {{ category.name }}
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Price Range Filter -->
+      <div class="mb-6">
+        <h4 class="text-lg font-medium mb-2">Price Range</h4>
+        <input 
+          type="range" 
+          min="0" 
+          max="1000" 
+          step="10" 
+          [(ngModel)]="priceRange" 
+          class="w-full h-2 bg-blue-200 rounded-md"
+        />
+        <p class="mt-2">Selected: {{ priceRange | currency }}</p>
+      </div>
+  
+      <!-- Status Filter -->
+      <div class="mb-6">
+        <h4 class="text-lg font-medium mb-2">Status</h4>
+        <select 
+          [(ngModel)]="selectedStatus" 
+          (change)="filterByStatus()" 
+          class="w-full p-2 border border-gray-300 rounded-md"
+        >
+          <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+        </select>
+      </div>
+    </div>
+  
+    <!-- Main Content for Products -->
+    <div class="w-3/4 p-6">
+      <h3 class="text-xl font-semibold mb-4">Products</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div *ngFor="let product of filteredProducts" class="border p-4 rounded-md shadow-md hover:shadow-lg transition-shadow">
+          <h4 class="text-lg font-semibold mb-2">{{ product.name }}</h4>
+          <p class="text-sm mb-2">{{ product.description }}</p>
+          <p class="font-medium text-blue-600">Price: {{ product.price | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

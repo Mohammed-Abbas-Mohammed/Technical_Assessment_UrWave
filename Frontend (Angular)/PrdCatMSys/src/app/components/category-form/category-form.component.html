@@ -1,0 +1,43 @@
+<div class="bg-white p-6 rounded-lg shadow-md">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input
+          id="name"
+          type="text"
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="formCategory.name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+        <textarea
+          id="description"
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="formCategory.description"
+          name="description"
+        ></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="parentCategoryId" class="block text-sm font-medium text-gray-700">Parent Category</label>
+        <input
+          id="parentCategoryId"
+          type="text"
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="formCategory.parentCategoryId"
+          name="parentCategoryId"
+        />
+      </div>
+
+      <div class="flex justify-between mt-6">
+        <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition">Save</button>
+        <button type="button" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 transition" (click)="cancel.emit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
