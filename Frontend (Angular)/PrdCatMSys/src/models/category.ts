@@ -6,7 +6,7 @@ export interface Category {
     name: string;
     description: string;
     parentCategoryId: string;
-    parentCategory: Category; 
+    parentCategory: Category | null; 
     products: Product[];
     subCategories: Category[];
     createdDate?: Date;

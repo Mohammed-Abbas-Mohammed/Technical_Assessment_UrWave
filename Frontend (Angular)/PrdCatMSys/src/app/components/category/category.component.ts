@@ -15,7 +15,7 @@ import { CategoryFormComponent } from '../category-form/category-form.component'
 
 })
 export class CategoryComponent implements OnInit {
-  categories: any[] = [];
+  categories: Category[] = [];
   selectedCategory: Category | null = null; 
   showForm = false; // Toggle form visibility
 
@@ -23,12 +23,16 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
-    // this.loadCategories();
+    this.loadCategories();
   }
 
   loadCategories(): void {
-    this.categoryService.getCategories().subscribe((data) => {
-      this.categories = data;
+    this.categoryService.getCategories().subscribe(response => {
+      if (response.isSuccess) {
+        this.categories = response.entity;
+      } else {
+        console.error(response.msg); 
+      }
     });
   }
 

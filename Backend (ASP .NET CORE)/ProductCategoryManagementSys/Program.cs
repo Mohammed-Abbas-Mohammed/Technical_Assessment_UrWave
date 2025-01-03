@@ -28,6 +28,19 @@ namespace ProductCategoryManagementSys
             var serviceProvider = builder.Services.BuildServiceProvider();
             var mapper = serviceProvider.GetService<IMapper>();
 
+
+            builder.Services.AddCors(op =>
+            {
+
+                op.AddPolicy("Default", policy =>
+                {
+                    policy.AllowAnyHeader()
+                          .AllowAnyOrigin()
+                          .AllowAnyMethod();
+                });
+            });
+
+
             // Add services to the container.
             builder.Services.AddAuthorization();
 
@@ -41,6 +54,8 @@ namespace ProductCategoryManagementSys
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
 
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -51,6 +66,7 @@ namespace ProductCategoryManagementSys
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("Default");
 
             app.UseAuthorization();
 
@@ -148,25 +164,7 @@ namespace ProductCategoryManagementSys
 
 
 
-            var summaries = new[]
-            {
-                "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-            };
-
-            app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-            {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
-                    new WeatherForecast
-                    {
-                        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                        TemperatureC = Random.Shared.Next(-20, 55),
-                        Summary = summaries[Random.Shared.Next(summaries.Length)]
-                    })
-                    .ToArray();
-                return forecast;
-            })
-            .WithName("GetWeatherForecast")
-            .WithOpenApi();
+           
 
             app.Run();
         }

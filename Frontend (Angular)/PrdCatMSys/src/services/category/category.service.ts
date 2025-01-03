@@ -1,39 +1,75 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
+import { Category } from '../../models/category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = 'https://localhost:7112/api/categories'; 
+  private apiUrl = 'https://localhost:7112/categories'; 
 
   constructor(private http: HttpClient) {}
+ // Fetch all categories
+ getCategories(): Observable<{ entity: Category[]; isSuccess: boolean; msg: string }> {
+  return this.http.get<{ entity: Category[]; isSuccess: boolean; msg: string }>(this.apiUrl).pipe(
+    catchError(error => {
+      console.error('Error fetching categories:', error);
+      return of({ entity: [], isSuccess: false, msg: 'Failed to fetch categories' });
+    })
+  );
+}
 
-  getCategories(): Observable<any> {
-    return this.http.get(`${this.apiUrl}`);
-  }
+// Fetch category by ID
+getCategoryById(id: string): Observable<{ entity: Category; isSuccess: boolean; msg: string }> {
+  return this.http.get<{ entity: Category; isSuccess: boolean; msg: string }>(`${this.apiUrl}/${id}`).pipe(
+    catchError(error => {
+      console.error(`Error fetching category with ID ${id}:`, error);
+      return of({ entity: null as any, isSuccess: false, msg: 'Failed to fetch category' });
+    })
+  );
+}
 
-  getCategoryById(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
-  }
+// Create a new category
+createCategory(category: Category): Observable<{ entity: Category; isSuccess: boolean; msg: string }> {
+  return this.http.post<{ entity: Category; isSuccess: boolean; msg: string }>(this.apiUrl, category).pipe(
+    catchError(error => {
+      console.error('Error creating category:', error);
+      return of({ entity: null as any, isSuccess: false, msg: 'Failed to create category' });
+    })
+  );
+}
 
-  createCategory(category: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, category);
-  }
+// Update an existing category
+updateCategory(id: string, category: Category): Observable<{ entity: Category; isSuccess: boolean; msg: string }> {
+  return this.http.put<{ entity: Category; isSuccess: boolean; msg: string }>(`${this.apiUrl}/${id}`, category).pipe(
+    catchError(error => {
+      console.error(`Error updating category with ID ${id}:`, error);
+      return of({ entity: null as any, isSuccess: false, msg: 'Failed to update category' });
+    })
+  );
+}
 
-  updateCategory(id: string, category: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, category);
-  }
+// Delete a category
+deleteCategory(id: string): Observable<{ isSuccess: boolean; msg: string }> {
+  return this.http.delete<{ isSuccess: boolean; msg: string }>(`${this.apiUrl}/${id}`).pipe(
+    catchError(error => {
+      console.error(`Error deleting category with ID ${id}:`, error);
+      return of({ isSuccess: false, msg: 'Failed to delete category' });
+    })
+  );
+}
 
-  deleteCategory(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
-  }
-
-  deleteSelectedCategories(ids: number[]): Observable<any> {
-    return this.http.delete<any>('/categories/batch', { body: ids });
-  }
+// Delete selected categories in batch
+deleteSelectedCategories(ids: number[]): Observable<{ isSuccess: boolean; msg: string }> {
+  return this.http.delete<{ isSuccess: boolean; msg: string }>(`${this.apiUrl}/batch`, { body: ids }).pipe(
+    catchError(error => {
+      console.error('Error deleting selected categories:', error);
+      return of({ isSuccess: false, msg: 'Failed to delete selected categories' });
+    })
+  );
+}
   
 }
 
